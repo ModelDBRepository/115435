@@ -1,0 +1,21 @@
+xpanel("Johnson and McIntyre 2008")
+  xlabel("Choose a simulation by pressing a below button")
+  xbutton("Short test run of the GPi neuron similar to Fig 1A", "short_run()")
+  xbutton("Sample run for the current injections that created Fig 2C","fig2c_point()")
+  xlabel("The sample simulation is set to a far right point of")
+  xlabel("i_inj=.5 nA and g_NaL = 28 uS")
+  xlabel("Additional files for simulating the response of these cells")
+  xlabel("to deep brain stimulation can be requested by contacting the")
+  xlabel("authors: johnsom11@ccf.org")
+xpanel()
+
+proc short_run() {
+  save_tstop=tstop
+  tstop = 50
+  init()
+  run()
+  tstop=save_tstop
+}
+
+proc fig2c_point() {
+  load_file("GPi_hocProps.ses")

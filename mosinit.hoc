@@ -1,0 +1,5 @@
+//moddir GPi_model GPe_model
+chdir("GPi_model")
+load_file("GPi_init.hoc")
+load_file("GPi_hocProps.ses")
+load_file("GPi_simchooser.hoc")
